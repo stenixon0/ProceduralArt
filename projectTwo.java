@@ -25,8 +25,23 @@ function setup () {
 function draw() {
   background(0);
   noFill();
-  stroke(255); 
+  stroke(255);
+  push();
+  translate(series[0] + series[1], 0);
+  render();
+  pop();
   
+  push();
+  translate(series[0] + series[1], 2 * series[0])
+  rotate(PI);
+  render();
+  pop();
+  
+  
+  
+}
+
+function render() {
   push();
   squares[0].display();
   for(i = 1; i < squares.length; i++){
